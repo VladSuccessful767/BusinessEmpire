@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Бизнес Империя</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">♛</div><div><div class="brand-title">БИЗНЕС ИМПЕРИЯ</div><div class="brand-subtitle">v0.3.0 • производственный tycoon</div></div></div>
+    <div class="resources">
+      <div class="resource"><span>💰</span><div><b id="money">1 000</b><small>₽</small><em id="moneyRate">+0 /мин</em></div></div>
+      <div class="resource"><span>⭐</span><div><b id="level">1</b><small>Репутация</small><em id="xpRate">0 /100 XP</em></div></div>
+      <div class="resource"><span>🪵</span><div><b id="wood">0</b><small>дерево</small><em id="woodRate">+0 /мин</em></div></div>
+      <div class="resource"><span>📦</span><div><b id="boards">0</b><small>доски</small><em id="boardRate">+0 /мин</em></div></div>
+      <div class="resource workers"><span>👷</span><div><b>5/5</b><small>рабочие</small></div></div>
+    </div>
+    <div class="top-actions"><button>🏆</button><button>▥</button><button>⚙</button></div>
+  </header>
+
+  <main class="game-area">
+    <canvas id="gameCanvas"></canvas>
+    <aside class="left-nav">
+      <button class="active">🏠 <span>Обзор</span></button>
+      <button id="navOrders">📋 <span>Заказы</span><b id="ordersBadge">3</b></button>
+      <button>🏗️ <span>Строительство</span></button>
+      <button>⬆️ <span>Улучшения</span></button>
+      <button>📦 <span>Склад</span></button>
+      <button>🚚 <span>Транспорт</span></button>
+      <button>👷 <span>Персонал</span></button>
+      <button>⚗️ <span>Исследования</span></button>
+      <button>⚙️ <span>Настройки</span></button>
+    </aside>
+
+    <section id="ordersPanel" class="glass-panel orders-panel hidden"></section>
+    <section id="buildingPanel" class="glass-panel building-panel hidden"></section>
+
+    <section class="truck-card glass-panel">
+      <div class="truck-title"><b>🚚 ГРУЗОВИК 1</b><span>Уровень <b id="truckLevel">1</b></span></div>
+      <div class="truck-body"><div class="truck-illustration">🚚</div><div><div class="progress"><i id="truckProgress"></i></div><p>Скорость: <b id="truckSpeed">70 км/ч</b></p><p>Груз: <b id="truckLoad">0 / 150</b></p></div></div>
+      <button id="truckUpgrade">УЛУЧШИТЬ <strong>1 200 ₽</strong></button>
+    </section>
+    <button id="buyTruck" class="buy-truck glass-panel"><span>＋</span><b>Купить<br>грузовик</b><strong>4 000 ₽</strong></button>
+
+    <div class="flow"><span>🌲</span><i>›</i><span>🪵</span><i>›</i><span>🚚</span><i>›</i><span>💰</span></div>
+    <nav class="bottom-nav glass-panel"><button class="active">🏠<small>Обзор</small></button><button>⚙<small>Производство</small></button><button>🚚<small>Логистика</small></button><button>🪙<small>Финансы</small></button><button>🏢<small>Компания</small></button></nav>
+    <div class="day-card glass-panel"><b>День <span id="day">1</span></b><span>☀️</span><small id="clock">10:25 Ясно</small></div>
+    <div id="toast" class="toast"></div>
+    <div class="hint">🖱️ Нажимай на здания • Двойной клик по свободному месту — строительство</div>
+  </main>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
