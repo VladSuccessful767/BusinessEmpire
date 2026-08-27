@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Бизнес Империя</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-title">БИЗНЕС ИМПЕРИЯ</div>
+        <div class="brand-subtitle">v0.1.0 • производственный tycoon</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>💰</span><b id="money">1 000</b><small>₽</small></div>
+        <div class="stat"><span>⭐</span><b id="level">1</b></div>
+        <div class="stat"><span>📦</span><b id="wood">0</b><small>дерево</small></div>
+        <div class="stat"><span>🪵</span><b id="boards">0</b><small>доски</small></div>
+      </div>
+    </header>
+
+    <main class="game-wrap">
+      <canvas id="gameCanvas"></canvas>
+
+      <aside id="infoPanel" class="panel hidden">
+        <button id="closePanel" class="close">×</button>
+        <div id="panelContent"></div>
+      </aside>
+
+      <div id="toast" class="toast"></div>
+
+      <div class="hint">
+        🖱️ Нажимай на здания и объекты • Двойной клик по свободному месту — строительство
+      </div>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
