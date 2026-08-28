@@ -1,0 +1,1875 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url("background.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-color: #101318;
+    color: #f2f4f7;
+}
+
+body {
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+}
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: rgba(23, 27, 33, 0.88);
+    overflow-x: hidden;
+}
+
+/* =========================
+   Верхняя панель
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 18px 16px;
+    background: #20252d;
+    border-bottom: 1px solid #303640;
+}
+
+.game-title {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.game-subtitle {
+    margin-top: 3px;
+    color: #9da6b2;
+    font-size: 13px;
+}
+
+.player-level {
+    text-align: right;
+    background: #2a3039;
+    padding: 7px 12px;
+    border-radius: 12px;
+}
+
+.player-level span {
+    display: block;
+    color: #9da6b2;
+    font-size: 11px;
+}
+
+.player-level b {
+    font-size: 18px;
+}
+
+/* =========================
+   Статистика
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 12px;
+    background: #12161b;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 10px 8px;
+    background: #20252d;
+    border: 1px solid #303640;
+    border-radius: 12px;
+}
+
+.stat > span {
+    font-size: 20px;
+}
+
+.stat small {
+    display: block;
+    color: #8f98a5;
+    font-size: 10px;
+}
+
+.stat b {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* =========================
+   Основная область
+========================= */
+
+main {
+    padding: 12px;
+}
+
+.garage-card,
+.order-card {
+    margin-bottom: 12px;
+    padding: 15px;
+    background: #20252d;
+    border: 1px solid #303640;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.garage-level,
+.order-status {
+    padding: 5px 8px;
+    border-radius: 8px;
+    background: #2b323c;
+    color: #aeb7c3;
+    font-size: 11px;
+}
+
+/* =========================
+   Гараж
+========================= */
+
+.garage-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    margin-bottom: 12px;
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            135deg,
+            #252b34,
+            #15191f
+        );
+    border: 1px solid #343b46;
+    font-size: 55px;
+}
+
+.garage-description {
+    margin: 0 0 14px;
+    color: #aeb6c1;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.garage-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.garage-stats div {
+    padding: 9px 7px;
+    background: #181c22;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.garage-stats span {
+    display: block;
+    color: #8993a0;
+    font-size: 10px;
+}
+
+.garage-stats b {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+/* =========================
+   Заказ
+========================= */
+
+.car-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #181c22;
+    border-radius: 12px;
+}
+
+.car-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    background: #292f38;
+    border-radius: 12px;
+    font-size: 31px;
+}
+
+.car-info h3 {
+    margin: 0 0 5px;
+    font-size: 17px;
+}
+
+.car-info p {
+    margin: 0;
+    color: #9da6b2;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.customer-message {
+    margin-top: 10px;
+    padding: 12px;
+    background: #242a32;
+    border-left: 3px solid #687381;
+    border-radius: 9px;
+}
+
+.customer-message span {
+    color: #c2c9d1;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.customer-message p {
+    margin: 7px 0 0;
+    color: #aeb6c1;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   Кнопки
+========================= */
+
+.main-button,
+.action-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px 15px;
+    border: 0;
+    border-radius: 11px;
+    background: #3b82f6;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, opacity 0.12s;
+}
+
+.main-button:active,
+.action-button:active,
+.menu-button:active {
+    transform: scale(0.98);
+}
+
+.main-button:hover,
+.action-button:hover {
+    opacity: 0.9;
+}
+
+.main-button:disabled,
+.action-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+/* =========================
+   Меню
+========================= */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+    padding-bottom: 18px;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 105px;
+    padding: 13px;
+    border: 1px solid #303640;
+    border-radius: 14px;
+    background: #20252d;
+    color: #f2f4f7;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-button > span {
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.menu-button b {
+    font-size: 14px;
+}
+
+.menu-button small {
+    margin-top: 4px;
+    color: #8993a0;
+    font-size: 11px;
+}
+
+/* =========================
+   Модальное окно
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-window {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid #363e49;
+    border-radius: 20px 20px 12px 12px;
+    background: #20252d;
+    box-shadow: 0 -10px 35px rgba(0, 0, 0, 0.35);
+}
+
+.modal-window h2 {
+    margin: 0 0 15px;
+    font-size: 20px;
+}
+
+.modal-window p {
+    color: #aeb6c1;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #303640;
+    color: #dfe4ea;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* =========================
+   Диагностика
+========================= */
+
+.diagnosis-list {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.diagnosis-button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3a424e;
+    border-radius: 11px;
+    background: #181c22;
+    color: #f2f4f7;
+    text-align: left;
+    cursor: pointer;
+}
+
+.diagnosis-button:hover {
+    background: #292f38;
+}
+
+.diagnosis-result {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 11px;
+    background: #181c22;
+    color: #b8c0ca;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   Строки характеристик
+========================= */
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 0;
+    border-bottom: 1px solid #303640;
+    font-size: 13px;
+}
+
+.stat-row:last-child {
+    border-bottom: 0;
+}
+
+.stat-row span {
+    color: #9da6b2;
+}
+
+.stat-row b {
+    color: #f2f4f7;
+}
+
+/* =========================
+   Уведомления
+========================= */
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    z-index: 200;
+    transform: translate(-50%, 20px);
+    width: calc(100% - 30px);
+    max-width: 480px;
+    padding: 12px 15px;
+    border: 1px solid #3b424d;
+    border-radius: 11px;
+    background: #252b33;
+    color: #f2f4f7;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+
+/* =========================================================
+   Осмотр и выбор действий — единый стиль игры
+========================================================= */
+.inspection-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+    margin:12px 0;
+}
+.inspection-button{
+    width:100%;
+    min-height:78px;
+    padding:11px;
+    border:1px solid #3f4b5a;
+    border-radius:12px;
+    background:#347ff0;
+    color:#fff;
+    text-align:left;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,.16);
+}
+.inspection-button:active{transform:scale(.985);background:#2d72da}
+.inspection-button span{display:block;font-size:21px;margin-bottom:5px}
+.inspection-button b{display:block;font-size:13px;line-height:1.2}
+.inspection-button small{display:block;margin-top:4px;color:#dce9ff;font-size:10px;line-height:1.25}
+.diagnosis-button{
+    background:#347ff0 !important;
+    border-color:#4b8df3 !important;
+    color:#fff !important;
+}
+.diagnosis-button:hover{background:#2d72da !important}
+.modal-back-button{
+    width:100%;
+    margin-top:9px;
+    padding:12px 14px;
+    border:1px solid #414b58;
+    border-radius:11px;
+    background:#303843;
+    color:#e7edf3;
+    text-align:center;
+    cursor:pointer;
+}
+.modal-back-button:active{transform:scale(.99);background:#394350}
+@media(max-width:390px){
+    .inspection-grid{grid-template-columns:1fr}
+}
+
+/* =========================
+   Маленькие экраны
+========================= */
+
+@media (max-width: 370px) {
+
+    .stats {
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .stat {
+        padding: 8px 5px;
+    }
+
+    .stat > span {
+        font-size: 17px;
+    }
+
+    .stat b {
+        font-size: 11px;
+    }
+
+    .garage-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   База знаний — v2
+========================= */
+.knowledge-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:14px;
+}
+.knowledge-header h2{margin:0 0 6px;font-size:22px}
+.knowledge-header p{margin:0;color:#9da6b2;font-size:13px;line-height:1.5}
+.knowledge-progress{
+    flex:0 0 auto;
+    min-width:72px;
+    padding:9px 8px;
+    border:1px solid #3a4552;
+    border-radius:12px;
+    background:#181c22;
+    text-align:center;
+}
+.knowledge-progress b{display:block;font-size:16px}
+.knowledge-progress span{display:block;margin-top:2px;color:#8993a0;font-size:10px}
+.knowledge-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.knowledge-category{
+    width:100%;
+    min-height:72px;
+    padding:12px;
+    border:1px solid #303943;
+    border-radius:12px;
+    background:#181d23;
+    color:#f2f4f7;
+    text-align:left;
+    cursor:pointer;
+}
+.knowledge-category b{display:block;font-size:14px}
+.knowledge-category small{display:block;margin-top:7px;color:#8993a0;font-size:11px}
+.knowledge-topic-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.knowledge-topic{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    width:100%;
+    padding:12px;
+    border:1px solid #303943;
+    border-radius:12px;
+    background:#181d23;
+    color:#f2f4f7;
+    text-align:left;
+    cursor:pointer;
+}
+.knowledge-topic:active,.knowledge-category:active{transform:scale(.99)}
+.knowledge-topic>span{flex:0 0 30px;font-size:23px;text-align:center}
+.knowledge-topic div{min-width:0}
+.knowledge-topic b{display:block;font-size:14px}
+.knowledge-topic small{display:block;margin-top:4px;color:#8993a0;font-size:11px}
+.knowledge-topic.studied{border-color:#3c5745}
+.knowledge-article-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.knowledge-article-title h2{margin:0;font-size:21px}
+.knowledge-badge{padding:5px 8px;border-radius:8px;background:#203728;color:#9de0ae;font-size:10px;white-space:nowrap}
+.knowledge-block,.knowledge-practice,.knowledge-future{
+    margin:10px 0;
+    padding:12px;
+    border:1px solid #303943;
+    border-radius:12px;
+    background:#181d23;
+}
+.knowledge-block h3,.knowledge-practice h3{margin:0 0 7px;font-size:14px}
+.knowledge-block p,.knowledge-block li,.knowledge-practice p,.knowledge-future p{margin:0;color:#b8c0ca;font-size:13px;line-height:1.55}
+.knowledge-block ul,.knowledge-block ol{margin:6px 0 0;padding-left:20px}
+.knowledge-block li+li{margin-top:5px}
+.knowledge-practice{border-color:#3b5260;background:#17232a}
+.knowledge-future{border-color:#5b4b2b;background:#211d14}
+.knowledge-future b{font-size:13px}
+.knowledge-future p{margin-top:6px;color:#c5bca9}
+.knowledge-search{display:flex;gap:8px;margin-top:12px}
+.knowledge-search input{flex:1;min-width:0;padding:12px;border:1px solid #303943;border-radius:10px;background:#11151a;color:#fff;outline:none}
+.knowledge-search-button{width:auto!important;margin-top:0!important;padding-left:16px!important;padding-right:16px!important}
+.knowledge-study-button{background:#38a169}
+.secondary-button{background:#303843}
+@media(max-width:420px){
+    .knowledge-category-grid{grid-template-columns:1fr}
+    .knowledge-header{gap:8px}
+    .knowledge-header h2{font-size:20px}
+    .knowledge-progress{min-width:64px}
+}
+
+
+/* =========================================================
+   ВИЗУАЛЬНЫЙ ГАРАЖ — стили интерактивной сцены
+   ========================================================= */
+
+.garage-visual-container{
+    height:260px !important;
+    min-height:260px !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    position:relative !important;
+    background:linear-gradient(180deg,#28313b 0%,#1b2128 68%,#11151a 100%) !important;
+    border:1px solid #394450 !important;
+    border-radius:16px !important;
+    font-size:16px !important;
+}
+.garage-scene{
+    position:relative !important;
+    width:100% !important;
+    height:100% !important;
+    overflow:hidden !important;
+    color:#dce4ec !important;
+    font-size:14px !important;
+    line-height:1.2 !important;
+}
+.garage-ceiling-light{
+    position:absolute !important;
+    top:12px !important;
+    left:50% !important;
+    width:130px !important;
+    height:9px !important;
+    transform:translateX(-50%) !important;
+    border-radius:999px !important;
+    background:#e9f5ff !important;
+    box-shadow:0 0 28px 9px rgba(180,225,255,.25) !important;
+}
+.garage-ceiling-light.pulse{animation:garagePulse 2.8s ease-in-out infinite}
+@keyframes garagePulse{0%,100%{opacity:.65}50%{opacity:1}}
+.garage-sign{
+    position:absolute !important;
+    top:35px !important;
+    left:50% !important;
+    transform:translateX(-50%) !important;
+    padding:6px 12px !important;
+    border:1px solid #475564 !important;
+    border-radius:8px !important;
+    background:#1b222a !important;
+    color:#b8d8e8 !important;
+    font-size:11px !important;
+    font-weight:700 !important;
+    letter-spacing:.5px !important;
+    white-space:nowrap !important;
+}
+.garage-shelf{
+    position:absolute !important;
+    top:72px !important;
+    left:12px !important;
+    display:flex !important;
+    gap:9px !important;
+    padding:6px 8px !important;
+    border:1px solid #394550 !important;
+    border-radius:8px !important;
+    background:#171d24 !important;
+    font-size:17px !important;
+}
+.garage-lift{
+    position:absolute !important;
+    bottom:38px !important;
+    width:10px !important;
+    height:128px !important;
+    border-radius:4px !important;
+    background:#596775 !important;
+    box-shadow:inset 0 0 0 2px #313b46 !important;
+}
+.lift-left{left:28px !important}.lift-right{right:28px !important}
+.garage-car{
+    position:absolute !important;
+    left:50% !important;
+    bottom:42px !important;
+    width:245px !important;
+    height:100px !important;
+    transform:translateX(-50%) !important;
+    cursor:pointer !important;
+}
+.car-shadow{
+    position:absolute !important;
+    left:15px !important;
+    bottom:0 !important;
+    width:215px !important;
+    height:16px !important;
+    border-radius:50% !important;
+    background:rgba(0,0,0,.45) !important;
+    filter:blur(4px) !important;
+}
+.visual-car .car-body{
+    position:absolute !important;
+    left:8px !important;
+    bottom:14px !important;
+    width:225px !important;
+    height:64px !important;
+    border-radius:30px 35px 12px 12px !important;
+    background:linear-gradient(180deg,#77b9cf,#477b91) !important;
+    border:2px solid #29404b !important;
+}
+.car-roof{
+    position:absolute !important;
+    left:58px !important;
+    top:-36px !important;
+    width:108px !important;
+    height:44px !important;
+    border-radius:58px 58px 4px 4px !important;
+    background:#6ea8b9 !important;
+    border:2px solid #29404b !important;
+}
+.car-window{
+    position:absolute !important;
+    top:-29px !important;
+    height:28px !important;
+    background:#1e3542 !important;
+    border:2px solid #33515f !important;
+}
+.front-window{left:69px !important;width:43px !important;transform:skew(-12deg) !important}
+.rear-window{left:116px !important;width:42px !important;transform:skew(12deg) !important}
+.car-hood{
+    position:absolute !important;
+    right:-4px !important;
+    top:13px !important;
+    width:58px !important;
+    height:25px !important;
+    border-radius:8px !important;
+    background:#68a6ba !important;
+}
+.car-headlight{
+    position:absolute !important;
+    top:27px !important;
+    width:16px !important;
+    height:10px !important;
+    border-radius:8px !important;
+    background:#dff5ff !important;
+    box-shadow:0 0 9px rgba(220,245,255,.65) !important;
+}
+.left-headlight{left:4px !important}.right-headlight{right:2px !important}
+.car-grille{
+    position:absolute !important;
+    right:12px !important;
+    top:37px !important;
+    width:30px !important;
+    height:12px !important;
+    border-radius:3px !important;
+    background:#25323a !important;
+}
+.car-wheel{
+    position:absolute !important;
+    bottom:-12px !important;
+    width:40px !important;
+    height:40px !important;
+    border-radius:50% !important;
+    background:#11151a !important;
+    border:6px solid #37414b !important;
+}
+.left-wheel{left:35px !important}.right-wheel{right:35px !important}
+.car-nameplate{
+    position:absolute !important;
+    left:50% !important;
+    bottom:-28px !important;
+    transform:translateX(-50%) !important;
+    padding:4px 8px !important;
+    border-radius:7px !important;
+    background:#151a20 !important;
+    color:#b8c4cf !important;
+    font-size:10px !important;
+    white-space:nowrap !important;
+}
+.garage-hotspot{
+    position:absolute !important;
+    z-index:3 !important;
+    padding:6px 8px !important;
+    border:1px solid #526273 !important;
+    border-radius:8px !important;
+    background:#202832 !important;
+    color:#e7edf3 !important;
+    font-size:10px !important;
+    cursor:pointer !important;
+}
+.hotspot-tools{left:12px !important;bottom:12px !important}
+.hotspot-obd{right:12px !important;bottom:12px !important}
+.hotspot-parts{left:50% !important;bottom:12px !important;transform:translateX(-50%) !important}
+.hotspot-knowledge{right:12px !important;top:74px !important}
+.garage-hint{
+    position:absolute !important;
+    left:50% !important;
+    bottom:9px !important;
+    transform:translateX(-50%) !important;
+    color:#aeb9c5 !important;
+    font-size:10px !important;
+    white-space:nowrap !important;
+    pointer-events:none !important;
+}
+.garage-image > *{font-size:inherit}
+.garage-image span{font-size:inherit}
+
+/* =========================================================
+   Тесты
+   ========================================================= */
+.training-test-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.training-test-card{
+    padding:12px;
+    border:1px solid #303943;
+    border-radius:12px;
+    background:#181d23;
+}
+.training-test-card.passed{border-color:#3c5745;background:#17231c}
+.training-test-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.training-test-head h3{margin:0;font-size:15px}
+.training-test-head span{flex:0 0 auto;color:#9aa6b2;font-size:10px}
+.training-test-card.passed .training-test-head span{color:#9de0ae}
+.training-test-card p{margin:7px 0 0;color:#aeb6c1;font-size:12px;line-height:1.45}
+
+/* Hard mobile reset: prevents unstyled/raw garage content from becoming huge */
+html{font-size:16px !important}
+body{font-size:16px !important;overflow-x:hidden !important}
+button,input{font-size:inherit !important}
+.game-title{font-size:22px !important;line-height:1.1 !important}
+.game-subtitle{font-size:13px !important;line-height:1.3 !important}
+.topbar h1,.topbar h2,.topbar h3,.topbar p{font-size:inherit !important}
+.garage-card h2,.order-card h2{font-size:18px !important;line-height:1.2 !important}
+.garage-card h3,.order-card h3{font-size:17px !important;line-height:1.25 !important}
+.garage-card p,.order-card p{font-size:13px !important;line-height:1.5 !important}
+.action-button{font-size:14px !important;line-height:1.2 !important}
+@media(max-width:420px){
+    .app{max-width:520px !important}
+    .topbar{padding:16px 14px !important}
+    main{padding:10px !important}
+    .garage-card,.order-card{padding:13px !important}
+    .garage-visual-container{height:245px !important;min-height:245px !important}
+    .garage-car{transform:translateX(-50%) scale(.88) !important}
+}
+
+/* =========================================================
+   Согласование запчастей — v13
+========================================================= */
+.part-options{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.part-option{width:100%;padding:12px;border:1px solid #343d49;border-radius:13px;background:#181d23;color:#f2f4f7;text-align:left;cursor:pointer}
+.part-option.selected{border-color:#4d91f7;background:#1b2a3e;box-shadow:0 0 0 1px rgba(59,130,246,.18)}
+.part-option:active{transform:scale(.99)}
+.part-option-top{display:flex;align-items:center;gap:10px}
+.part-icon{font-size:18px;flex:0 0 auto}
+.part-option-top>div{min-width:0;flex:1}
+.part-option-top b{display:block;font-size:13px}
+.part-option-top small{display:block;margin-top:3px;color:#8f9aa8;font-size:10px}
+.part-option-top strong{font-size:13px;white-space:nowrap}
+.part-option-meta{display:flex;justify-content:space-between;gap:8px;margin-top:9px;padding-top:8px;border-top:1px solid #2c343e;color:#9fa9b5;font-size:10px}
+.markup-panel{margin-top:12px;padding:12px;border:1px solid #3a4551;border-radius:13px;background:#171c22}
+.field-label{display:block;margin-top:12px;margin-bottom:6px;color:#c2cad3;font-size:12px;font-weight:700}
+.price-input{width:100%;padding:12px;border:1px solid #3a4551;border-radius:10px;background:#101419;color:#fff;outline:none}
+.price-input:focus{border-color:#4d91f7}
+.offer-preview{margin-top:8px}
+.offer-preview .stat-row:last-child b{color:#75d59a}
+
+/* Чистая сцена гаража без подъёмников и лишних кнопок */
+.garage-workbench{position:absolute;right:12px;top:72px;display:flex;gap:8px;padding:7px 9px;border:1px solid #394550;border-radius:8px;background:#171d24;font-size:17px}
+.garage-hint{bottom:7px!important}
+.garage-shelf{left:12px!important}
+
+/* На мобильном варианте сцена остаётся компактной */
+@media(max-width:420px){
+    .garage-workbench{right:10px;top:70px;font-size:15px}
+    .garage-shelf{top:70px!important;font-size:15px!important}
+    .garage-car{bottom:48px!important}
+}
+
+/* Клиент и согласование */
+.customer-choice{display:flex;gap:11px;align-items:flex-start;margin-top:12px;padding:12px;border-radius:12px;background:#181d23;border:1px solid #35404b}
+.customer-choice-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;background:#2b3440;font-size:23px;flex:0 0 auto}
+.customer-choice p{margin:5px 0 0;color:#b8c0ca;font-size:13px;line-height:1.45}
+.part-options.readonly .part-option{cursor:default}
+.part-options.readonly .part-option:active{transform:none}
+.upgrade-card{margin-top:12px;padding:12px;border:1px solid #3b4652;border-radius:13px;background:#181d23}
+.upgrade-card h3{margin:0 0 6px;font-size:15px}
+.upgrade-card p{margin:0 0 8px;color:#aeb6c1;font-size:12px;line-height:1.45}
+
+
+.tool-grid{display:grid;gap:12px;margin:14px 0}.tool-card{background:#171d25;border:1px solid #303946;border-radius:18px;padding:14px}.tool-card.owned{border-color:#3f6074}.tool-card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.tool-card h3{margin:0 0 5px;font-size:17px}.tool-card p{margin:0;color:#aeb7c3;font-size:13px;line-height:1.45}.tool-level{background:#2a3340;color:#c8d0db;border-radius:10px;padding:6px 8px;white-space:nowrap;font-size:12px}.tool-owned{color:#7fc4a3;font-size:13px;margin-top:8px}.tool-locked{color:#8d96a4;font-size:13px;margin-top:8px}.tool-card .action-button{margin-top:10px}
+
+
+/* v17 — репутация и премиум-магазин */
+.upgrade-warning{margin-top:9px;padding:9px;border-radius:10px;background:#2b2220;border:1px solid #59433c;color:#e7b29f;font-size:12px;line-height:1.4}
+.action-button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.2)}
+.premium-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.premium-card{padding:13px;border:1px solid #39434e;border-radius:14px;background:#181e25;text-align:center}
+.premium-gems{font-size:20px;font-weight:800;margin-bottom:7px}
+.premium-card>b{display:block;font-size:14px}
+.premium-card small{display:block;color:#7fd3a2;font-size:10px;margin:5px 0}
+.premium-card .action-button{margin-top:9px}
+@media(max-width:420px){.premium-grid{grid-template-columns:1fr 1fr;gap:8px}.premium-card{padding:10px}}
+
+/* Мастерство */
+.mastery-bar{height:4px;background:#242b34;border-radius:8px;overflow:hidden;margin-top:5px;width:100%;max-width:110px}
+.mastery-bar i{display:block;height:100%;width:0;background:#5d8fc1;border-radius:8px;transition:width .25s ease}
+.training-test-card .stat-row{margin-top:9px;padding:7px 0;border-top:1px solid #2b333d}
+.training-test-card button:disabled{opacity:.45;cursor:not-allowed}
+
+/* Связь заказа с базой знаний */
+.problem-knowledge{margin-top:12px}
+.problem-knowledge>small{display:block;margin-top:5px;opacity:.78}
+.knowledge-topic-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.knowledge-mini-button{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:inherit;border-radius:10px;padding:8px 10px;font-size:12px;cursor:pointer}
+.knowledge-mini-button.studied{border-color:rgba(90,210,120,.35);background:rgba(90,210,120,.10)}
+
+
+/* =========================================================
+   v06 — ЕДИНЫЙ ДИЗАЙН ИГРЫ
+   Главная / СТО / оборудование / склад / заказы / аукцион
+   ========================================================= */
+:root{
+  --bg:#0d1218;
+  --panel:#1b222b;
+  --panel2:#151b22;
+  --panel3:#222b35;
+  --line:#303b47;
+  --text:#f4f6f8;
+  --muted:#9aa6b3;
+  --blue:#3b82f6;
+  --blue2:#2563d8;
+  --green:#27b765;
+  --gold:#f5c84b;
+  --danger:#e04b43;
+  --shadow:0 12px 32px rgba(0,0,0,.28);
+}
+
+html,body{
+  background-color:var(--bg) !important;
+  color:var(--text) !important;
+}
+body{
+  font-family:"Trebuchet MS",Arial,sans-serif !important;
+  background-image:linear-gradient(rgba(8,12,17,.62),rgba(8,12,17,.78)),url("background.jpg") !important;
+}
+.app{
+  max-width:540px !important;
+  background:rgba(13,18,24,.94) !important;
+  box-shadow:0 0 50px rgba(0,0,0,.28);
+}
+
+/* Верхняя шапка */
+.topbar{
+  padding:20px 18px 18px !important;
+  background:linear-gradient(145deg,#202832,#171d25) !important;
+  border-bottom:1px solid #35414e !important;
+}
+.game-title{
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:27px !important;
+  letter-spacing:-.3px;
+}
+.game-subtitle{font-size:13px !important;color:#aab4bf !important}
+.player-level{
+  min-width:88px;
+  padding:9px 12px !important;
+  border:1px solid #303b48;
+  border-radius:15px !important;
+  background:#28313c !important;
+  box-shadow:inset 0 1px rgba(255,255,255,.03);
+}
+.player-level b{font-size:22px !important}
+
+/* Статистика */
+.stats{
+  gap:9px !important;
+  padding:13px !important;
+  background:#0f141a !important;
+}
+.stat{
+  min-height:76px;
+  padding:11px 10px !important;
+  border:1px solid #303b47 !important;
+  border-radius:16px !important;
+  background:linear-gradient(145deg,#202832,#1a2028) !important;
+  box-shadow:0 5px 16px rgba(0,0,0,.18);
+}
+.stat > span{font-size:24px !important}
+.stat small{font-size:10px !important;color:#9ba6b2 !important}
+.stat b{font-size:15px !important}
+
+main{padding:13px !important}
+.garage-card,.order-card{
+  padding:16px !important;
+  border:1px solid #303b47 !important;
+  border-radius:20px !important;
+  background:linear-gradient(160deg,#202832,#181e26) !important;
+  box-shadow:var(--shadow) !important;
+}
+.section-title{margin-bottom:13px !important}
+.section-title h2{
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:22px !important;
+}
+.garage-level,.order-status{
+  padding:7px 10px !important;
+  border:1px solid #34404c;
+  border-radius:12px !important;
+  background:#2a333e !important;
+  font-size:11px !important;
+}
+
+/* Главная сцена */
+.garage-visual-container{
+  height:305px !important;
+  min-height:305px !important;
+  border-radius:18px !important;
+  border:1px solid #3b4754 !important;
+  background:
+    radial-gradient(circle at 50% 22%,rgba(87,122,150,.18),transparent 34%),
+    linear-gradient(180deg,#28333e 0%,#1a222b 62%,#11161c 100%) !important;
+  box-shadow:inset 0 1px rgba(255,255,255,.04),0 8px 24px rgba(0,0,0,.22);
+}
+.garage-sign{top:37px !important;background:#1b242d !important;border-color:#4a5968 !important;font-size:12px !important}
+.garage-shelf,.garage-workbench{
+  border-color:#465462 !important;
+  background:#171e26 !important;
+  box-shadow:0 5px 14px rgba(0,0,0,.2);
+}
+.garage-car{bottom:61px !important;transform:translateX(-50%) scale(1.03) !important}
+.garage-hint{bottom:11px !important;font-size:11px !important;color:#b7c1cb !important}
+
+/* Кнопки под машиной — как плитки приложения */
+.garage-actions{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:9px !important;
+  margin-top:11px !important;
+}
+.garage-action-button{
+  min-height:54px !important;
+  padding:10px 11px !important;
+  border:1px solid #35414e !important;
+  border-radius:14px !important;
+  background:linear-gradient(145deg,#252e39,#1b222a) !important;
+  color:#f2f5f7 !important;
+  text-align:left !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  box-shadow:0 5px 14px rgba(0,0,0,.16);
+  transition:.15s ease;
+}
+.garage-action-button:hover{border-color:#4c86d7 !important;transform:translateY(-1px)}
+.garage-action-button:active{transform:scale(.985)}
+.garage-action-button span{
+  float:right;
+  min-width:24px;
+  padding:3px 6px;
+  border-radius:8px;
+  background:#303b47;
+  color:#cbd5df;
+  text-align:center;
+}
+
+/* Заказы */
+.car-info{
+  padding:13px !important;
+  border:1px solid #303b47;
+  background:#171e26 !important;
+  border-radius:15px !important;
+}
+.car-icon{background:#28323d !important;border:1px solid #384552}
+.customer-message{background:#202933 !important;border-left-color:#4d83d4 !important}
+
+/* Все меню игры */
+.menu-grid{gap:10px !important}
+.menu-button{
+  min-height:112px !important;
+  padding:14px !important;
+  border:1px solid #303b47 !important;
+  border-radius:16px !important;
+  background:linear-gradient(145deg,#202832,#191f27) !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+.menu-button:hover{border-color:#456b9e !important;background:#222d38 !important}
+.menu-button > span{font-size:27px !important}
+.menu-button b{font-size:15px !important}
+
+/* Общие кнопки */
+.main-button,.action-button{
+  min-height:46px;
+  border-radius:13px !important;
+  background:linear-gradient(180deg,#438df7,#2f73df) !important;
+  box-shadow:0 6px 16px rgba(42,105,208,.18);
+}
+.action-button.secondary-button,.secondary-button{background:#303a46 !important}
+.modal-back-button{border-radius:13px !important;background:#2b3540 !important}
+
+/* Модальные окна */
+.modal{padding:10px !important;background:rgba(4,8,12,.76) !important;backdrop-filter:blur(4px)}
+.modal-window{
+  max-width:540px !important;
+  padding:18px !important;
+  border:1px solid #3a4653 !important;
+  border-radius:22px 22px 15px 15px !important;
+  background:linear-gradient(160deg,#202832,#171d24) !important;
+  box-shadow:0 -15px 45px rgba(0,0,0,.45) !important;
+}
+.modal-window h2{font-family:Georgia,"Times New Roman",serif !important;font-size:23px !important}
+
+/* Оборудование */
+.tool-grid{gap:10px !important}
+.tool-card{
+  padding:15px !important;
+  border:1px solid #303c48 !important;
+  border-radius:17px !important;
+  background:linear-gradient(145deg,#1e2730,#171e25) !important;
+}
+.tool-card.owned{border-color:#3e6c83 !important}
+.tool-level{background:#2a3541 !important}
+
+/* Знания / обучение */
+.knowledge-category,.knowledge-topic,.training-test-card,.knowledge-block,.knowledge-practice,.knowledge-future{
+  border-radius:15px !important;
+  background:linear-gradient(145deg,#1c252e,#161c23) !important;
+  border-color:#303c48 !important;
+}
+.knowledge-category:hover,.knowledge-topic:hover{border-color:#466b9e !important}
+.knowledge-search input,.price-input{background:#11171e !important;border-color:#34414e !important;border-radius:12px !important}
+
+/* Запчасти */
+.part-option,.upgrade-card,.markup-panel,.customer-choice{
+  border-radius:15px !important;
+  background:linear-gradient(145deg,#1d262f,#171e25) !important;
+  border-color:#303d49 !important;
+}
+.part-option.selected{border-color:#4d91f7 !important;background:#1b2b40 !important}
+
+/* =========================================================
+   АУКЦИОН — тот же визуальный язык, что и главная
+   ========================================================= */
+.auction-screen,.auction-inspection-screen{
+  font-family:"Trebuchet MS",Arial,sans-serif !important;
+  color:#eef3f8 !important;
+  background:linear-gradient(180deg,#111820,#0d131a) !important;
+  padding:15px !important;
+}
+.auction-header{
+  grid-template-columns:1fr auto auto !important;
+  padding:4px 0 15px !important;
+  border-bottom:1px solid #303c48 !important;
+}
+.auction-header h2{font-family:Georgia,"Times New Roman",serif !important;font-size:24px !important}
+.auction-budget{
+  padding:9px 12px !important;
+  border:1px solid #354352 !important;
+  border-radius:12px !important;
+  background:#202a34 !important;
+}
+.auction-day{padding:8px 10px !important;border-radius:10px !important;background:#1b242d !important}
+.auction-filters{gap:7px !important;margin:12px 0 !important;overflow-x:auto;padding-bottom:2px}
+.auction-filter{
+  border:1px solid #344250 !important;
+  border-radius:10px !important;
+  background:#1a232c !important;
+  color:#b8c3ce !important;
+  white-space:nowrap;
+}
+.auction-filter.active{background:#347ff0 !important;border-color:#4d91f7 !important;color:#fff !important}
+.auction-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
+.auction-card-modern,.auction-card{
+  border:1px solid #303e4b !important;
+  border-radius:17px !important;
+  background:linear-gradient(160deg,#202a34,#151c23) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.22) !important;
+}
+.auction-photo-wrap{height:132px !important;background:linear-gradient(145deg,#2a3744,#131a21) !important}
+.auction-card-body{padding:11px !important}
+.auction-card-body h3{font-family:Georgia,"Times New Roman",serif !important;font-size:16px !important}
+.auction-specs{font-size:10px !important}
+.auction-condition{background:#2a3540 !important}
+.auction-card-actions{gap:7px !important}
+.auction-inspect-button,.auction-buy-button,.auction-back-button,.auction-danger-button{
+  min-height:39px !important;
+  border-radius:11px !important;
+  border:1px solid rgba(255,255,255,.06) !important;
+}
+.auction-inspect-button{background:#315f9f !important}
+.auction-buy-button{background:linear-gradient(180deg,#2dc16b,#229c57) !important;color:#fff !important}
+.auction-back-button{background:#2b3642 !important}
+.auction-danger-button{background:#c9413a !important}
+.auction-legend{border-color:#303c48 !important}
+.auction-inspection-layout{gap:11px !important}
+.auction-car-summary,.auction-diagnostics{
+  border:1px solid #303e4b !important;
+  border-radius:17px !important;
+  background:linear-gradient(160deg,#202a34,#171e25) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+.auction-big-photo{border-radius:13px !important;background:#111820 !important}
+.auction-diagnostic-grid{gap:8px !important}
+.auction-diagnostic-card{
+  border:1px solid #303e4b !important;
+  border-radius:13px !important;
+  background:#151e26 !important;
+}
+.auction-diagnostic-card.available:hover{border-color:#4d91f7 !important;background:#1a2632 !important}
+.auction-found-box,.auction-info-box{border:1px solid #30404d !important;border-radius:13px !important;background:#111920 !important}
+.auction-main-buy{border-radius:13px !important;background:linear-gradient(180deg,#2dc16b,#229c57) !important}
+.auction-confirm{border-radius:17px !important}
+
+/* Премиум */
+.premium-card{border-radius:16px !important;background:linear-gradient(145deg,#202932,#171e25) !important}
+
+/* Мобильная адаптация */
+@media(max-width:520px){
+  .game-title{font-size:24px !important}
+  .stats{grid-template-columns:repeat(3,1fr) !important}
+  .stat{min-height:72px !important}
+  .garage-visual-container{height:292px !important;min-height:292px !important}
+  .garage-car{transform:translateX(-50%) scale(.96) !important;bottom:59px !important}
+  .garage-actions{grid-template-columns:1fr 1fr !important}
+  .garage-action-button{font-size:12px !important;min-height:52px !important}
+  .auction-screen,.auction-inspection-screen{padding:11px !important}
+  .auction-header{grid-template-columns:1fr auto !important}
+  .auction-day{display:none !important}
+  .auction-refresh-button{grid-column:1/-1 !important;width:100% !important}
+  .auction-grid{grid-template-columns:1fr 1fr !important}
+  .auction-photo-wrap{height:108px !important}
+  .auction-card-body h3{font-size:14px !important}
+  .auction-diagnostic-grid{grid-template-columns:1fr 1fr !important}
+}
+@media(max-width:390px){
+  .stats{gap:6px !important;padding:9px !important}
+  .stat{padding:9px 6px !important}
+  .stat > span{font-size:19px !important}
+  .stat b{font-size:11px !important}
+  .garage-actions{grid-template-columns:1fr !important}
+  .auction-grid{grid-template-columns:1fr !important}
+  .auction-diagnostic-grid{grid-template-columns:1fr !important}
+}
+
+/* =========================================================
+   V06.1 — ЕДИНАЯ МОБИЛЬНАЯ НАВИГАЦИЯ ГАРАЖА
+   Кнопки больше не лежат поверх автомобиля.
+========================================================= */
+.garage-navigation{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:10px 0 14px;
+}
+.garage-nav-card{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:100% !important;
+  min-height:68px !important;
+  padding:12px !important;
+  border:1px solid #34414e !important;
+  border-radius:16px !important;
+  background:linear-gradient(145deg,#232d38,#182029) !important;
+  color:#f4f6f8 !important;
+  text-align:left !important;
+  box-shadow:0 6px 16px rgba(0,0,0,.18) !important;
+}
+.garage-nav-card.accent{
+  border-color:#397fd7 !important;
+  background:linear-gradient(145deg,#1f416b,#172a40) !important;
+}
+.garage-nav-card:active{transform:scale(.985)}
+.garage-nav-icon{font-size:25px !important;flex:0 0 29px}
+.garage-nav-card b{display:block;font-size:13px;line-height:1.2}
+.garage-nav-card small{display:block;margin-top:4px;color:#9eabb8;font-size:10px;line-height:1.25}
+@media(max-width:390px){
+  .garage-navigation{grid-template-columns:1fr !important}
+}
+
+
+/* =========================================================
+   Нижняя навигация — v06.2
+========================================================= */
+.bottom-navigation{
+    position:fixed;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:min(520px,100vw);
+    height:68px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:4px;
+    padding:7px 8px calc(7px + env(safe-area-inset-bottom));
+    background:rgba(17,22,28,.97);
+    border-top:1px solid #34404d;
+    box-shadow:0 -8px 28px rgba(0,0,0,.28);
+    z-index:450;
+    backdrop-filter:blur(10px);
+}
+.bottom-navigation button{
+    min-width:0;
+    border:1px solid transparent;
+    border-radius:12px;
+    background:transparent;
+    color:#8f9aa7;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    padding:3px 2px;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+}
+.bottom-navigation button span{font-size:20px;line-height:1}
+.bottom-navigation button b{font-size:10px;line-height:1.1;font-weight:700;white-space:nowrap}
+.bottom-navigation button.active{
+    color:#f2f5f8;
+    background:#243140;
+    border-color:#3c5066;
+}
+.bottom-navigation button:active{transform:scale(.96)}
+
+/* Не даём фиксированной панели перекрывать последние блоки страницы. */
+main{padding-bottom:96px !important}
+
+/* =========================================================
+   Цели — исправление слипшегося текста
+========================================================= */
+.goal-row-fixed{
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:space-between !important;
+    gap:14px !important;
+    padding:10px 0 !important;
+    line-height:1.25 !important;
+}
+.goal-row-fixed .goal-copy-fixed{
+    min-width:0;
+    flex:1 1 auto;
+}
+.goal-row-fixed .goal-copy-fixed b{
+    display:block !important;
+    font-size:15px !important;
+    line-height:1.25 !important;
+}
+.goal-row-fixed .goal-copy-fixed small{
+    display:block !important;
+    margin-top:3px !important;
+    color:#9da6b2 !important;
+    font-size:11px !important;
+    line-height:1.3 !important;
+}
+.goal-row-fixed > span[id^="goal"]{
+    flex:0 0 auto;
+    white-space:nowrap !important;
+    font-size:13px !important;
+    font-weight:700 !important;
+}
+
+/* =========================================================
+   Аукцион — мобильное исправление кнопок
+========================================================= */
+@media(max-width:520px){
+    #modal.auction-modal{padding:8px 4px !important;}
+    #modalContent.auction-content{
+        width:calc(100vw - 8px) !important;
+        max-width:calc(100vw - 8px) !important;
+        margin:0 auto !important;
+    }
+    .auction-screen,.auction-inspection-screen{min-width:0 !important;}
+    .auction-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+    .auction-card-actions{grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;}
+    .auction-card-actions button{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        padding:8px 4px !important;
+        font-size:11px !important;
+        white-space:nowrap !important;
+    }
+}
+
+
+/* =========================================================
+   CAR MECHANIC UI v2
+   Visual shell only: game state and progression are untouched.
+   ========================================================= */
+
+:root{
+  --cm-bg:#070b10;
+  --cm-panel:#101821;
+  --cm-panel2:#141f29;
+  --cm-line:#2a4051;
+  --cm-text:#edf3f8;
+  --cm-muted:#8fa1b0;
+  --cm-accent:#2f8cff;
+  --cm-accent2:#6db5ff;
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% -10%, rgba(45,94,132,.24), transparent 38%),
+    linear-gradient(180deg,#091017 0%,#060a0e 100%);
+  color:var(--cm-text);
+}
+
+.cm-topbar{
+  position:relative;
+  padding:22px 18px 18px;
+  background:linear-gradient(180deg,#121d27,#0b1219);
+  border-bottom:1px solid #223442;
+}
+
+.cm-topbar .brand-icon{
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.cm-topbar h1{
+  font-size:clamp(30px,8vw,46px);
+  letter-spacing:-1.5px;
+  margin:2px 0;
+}
+
+.cm-topbar .brand p{color:#9aabba}
+
+.eyebrow{
+  color:#6f8799;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+}
+
+.level-box{
+  min-width:82px;
+  text-align:center;
+  background:#17242f;
+  border:1px solid #355066;
+  border-radius:18px;
+  padding:11px 9px;
+  box-shadow:inset 0 1px rgba(255,255,255,.04);
+}
+.level-box span{font-size:11px;color:#8ea1b0}
+.level-box b{display:block;font-size:34px;line-height:1}
+.level-box small{color:#91a4b2}
+
+.cm-container{
+  max-width:900px;
+  padding-bottom:100px;
+}
+
+.cm-stats{
+  gap:10px;
+  margin-top:14px;
+}
+
+.cm-stats .stat-card{
+  background:linear-gradient(180deg,#111c25,#0e171f);
+  border:1px solid #294050;
+  border-radius:18px;
+  min-height:92px;
+}
+
+.cm-stats .stat-card>span{
+  color:#74b6ff;
+  font-weight:800;
+}
+
+.cm-garage-card{
+  overflow:hidden;
+  background:linear-gradient(180deg,#121d26,#0c141b);
+}
+
+.cm-garage-card .description{
+  max-width:680px;
+  color:#98a9b6;
+}
+
+.cm-garage-image{
+  min-height:390px;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid #314858;
+  background:#060a0e;
+  box-shadow:0 18px 45px rgba(0,0,0,.34);
+  margin:18px 0;
+}
+
+/* Make the garage scene feel like a dedicated game viewport. */
+.cm-garage-image .garage-scene{
+  min-height:390px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(24,39,51,.25),rgba(3,7,10,.2)),
+    radial-gradient(ellipse at 50% 75%,rgba(69,100,120,.17),transparent 35%),
+    linear-gradient(180deg,#111a21 0%,#0a1015 62%,#070b0e 100%);
+}
+
+.cm-garage-image .garage-ceiling-light{
+  filter:drop-shadow(0 0 18px rgba(170,210,235,.65));
+}
+
+.cm-garage-image .garage-car{
+  transform:translateX(-50%) scale(1.12);
+  transition:transform .35s ease,filter .35s ease;
+  filter:drop-shadow(0 20px 18px rgba(0,0,0,.55));
+}
+.cm-garage-image .garage-car:hover{
+  transform:translateX(-50%) scale(1.16);
+}
+
+.cm-garage-image .garage-hint{
+  background:rgba(7,12,17,.82);
+  border:1px solid #2e4657;
+  border-radius:12px;
+  backdrop-filter:blur(7px);
+}
+
+.cm-order-strip{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:15px;
+  background:#0b1218;
+  border:1px solid #293f4e;
+  border-radius:16px;
+}
+.cm-order-strip small{display:block;color:#718696;font-size:10px;letter-spacing:1.5px}
+.cm-order-strip strong{display:block;font-size:21px;margin:3px 0}
+.cm-order-strip span{display:block;color:#9aaab6}
+.cm-start-btn{min-width:190px}
+
+.cm-tools-card,.cm-progress-card,.cm-order-card{
+  background:linear-gradient(180deg,#111b24,#0c141b);
+}
+
+.cm-tool-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+}
+.cm-tool{
+  min-height:115px;
+  text-align:left;
+  padding:16px;
+  border:1px solid #294150;
+  border-radius:17px;
+  background:linear-gradient(180deg,#111c25,#0d161e);
+  color:var(--cm-text);
+  cursor:pointer;
+  transition:.2s;
+}
+.cm-tool:hover,.cm-tool:active{
+  transform:translateY(-2px);
+  border-color:#4389c4;
+  background:#14222d;
+}
+.cm-tool span{display:block;font-size:29px;margin-bottom:10px}
+.cm-tool b{display:block;font-size:17px}
+.cm-tool small{display:block;color:#7f94a4;margin-top:4px}
+
+.cm-progress-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid #223642;
+  color:#8fa1ae;
+}
+.cm-progress-row b{color:#e8eef3}
+.cm-progress{
+  height:8px;
+  margin:10px 0 2px;
+  border-radius:99px;
+  background:#071017;
+  overflow:hidden;
+}
+.cm-progress #xpBar{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#2f8cff,#6eb8ff);
+  transition:width .4s ease;
+}
+
+.cm-order-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.cm-order-main h3{font-size:22px;margin:0 0 5px}
+.cm-order-main p{margin:0;color:#8ea0ad}
+
+@media(max-width:600px){
+  .cm-topbar{padding:17px 14px}
+  .cm-topbar h1{font-size:30px}
+  .cm-topbar .brand p{font-size:13px}
+  .level-box{min-width:74px}
+  .cm-garage-image,.cm-garage-image .garage-scene{min-height:330px}
+  .cm-order-strip,.cm-order-main{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .cm-start-btn{width:100%}
+  .cm-tool-grid{gap:8px}
+  .cm-tool{min-height:108px;padding:13px}
+}
+
+@media(max-width:390px){
+  .cm-tool-grid{grid-template-columns:1fr}
+  .cm-garage-image,.cm-garage-image .garage-scene{min-height:300px}
+}
+
+/* Keep the existing modal/diagnostic system usable and readable. */
+.modal-window{
+  background:linear-gradient(180deg,#121d27,#0b1218)!important;
+  border-color:#355062!important;
+}
+.action-button,.primary-btn,.secondary-btn,.diagnosis-button{
+  touch-action:manipulation;
+}
+
+/* =========================================================
+   FINAL CAR MECHANIC UI — DESKTOP + MOBILE
+   Strong overrides are intentional: the project accumulated
+   several earlier design layers. This section is the final shell.
+========================================================= */
+:root{
+  --cm-bg:#071018;
+  --cm-panel:#0d1821;
+  --cm-panel2:#101d27;
+  --cm-panel3:#162632;
+  --cm-line:#294252;
+  --cm-text:#ecf3f8;
+  --cm-muted:#8fa2b1;
+  --cm-blue:#3187f5;
+  --cm-blue2:#2367c7;
+  --cm-green:#29c56a;
+  --cm-gold:#ffd35b;
+  --cm-danger:#ef5350;
+  --cm-shadow:0 18px 55px rgba(0,0,0,.34);
+}
+
+html{background:#050a0f!important;scroll-behavior:smooth}
+body{
+  margin:0!important;
+  min-height:100vh!important;
+  overflow-x:hidden!important;
+  color:var(--cm-text)!important;
+  background:
+    linear-gradient(rgba(4,9,13,.80),rgba(4,9,13,.88)),
+    url("background.jpg") center/cover fixed no-repeat!important;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% -10%,rgba(72,137,186,.18),transparent 34%);z-index:-1}
+
+.app{
+  width:min(1180px,100%)!important;
+  max-width:none!important;
+  min-height:100vh!important;
+  margin:0 auto!important;
+  background:rgba(7,14,20,.82)!important;
+  box-shadow:0 0 80px rgba(0,0,0,.35)!important;
+  overflow:visible!important;
+}
+
+.topbar{
+  position:sticky!important;
+  top:0!important;
+  z-index:90!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:22px!important;
+  padding:18px 28px!important;
+  background:rgba(10,18,25,.94)!important;
+  border-bottom:1px solid #203543!important;
+  backdrop-filter:blur(14px)!important;
+}
+.game-title{font-size:clamp(24px,3vw,36px)!important;line-height:1.05!important;letter-spacing:-.5px!important}
+.game-subtitle{font-size:14px!important;color:#91a4b3!important;margin-top:6px!important}
+.player-level{padding:12px 18px!important;border:1px solid #35536a!important;border-radius:17px!important;background:#13222d!important;min-width:92px!important;text-align:center!important;box-shadow:inset 0 1px rgba(255,255,255,.04)!important}
+.player-level span{font-size:11px!important;color:#8196a6!important}
+.player-level b{font-size:30px!important;display:block!important;line-height:1.05!important}
+
+.stats{
+  max-width:900px!important;
+  margin:16px auto 0!important;
+  padding:0 20px!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:14px!important;
+  background:transparent!important;
+}
+.stat{min-height:76px!important;padding:14px 16px!important;border-radius:16px!important;border:1px solid #294150!important;background:linear-gradient(180deg,#12202a,#0e1921)!important;box-shadow:0 10px 30px rgba(0,0,0,.18)!important}
+.stat > span{font-size:24px!important}.stat small{font-size:11px!important;color:#8298a8!important}.stat b{font-size:19px!important;margin-top:3px!important}.mastery-bar{max-width:150px!important;height:5px!important;margin-top:7px!important}
+
+main{
+  padding:16px 20px 116px!important;
+  max-width:1060px!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.42fr) minmax(300px,.78fr)!important;
+  gap:16px!important;
+}
+.garage-card,.order-card{
+  margin:0!important;
+  padding:20px!important;
+  border-radius:18px!important;
+  border:1px solid #294151!important;
+  background:linear-gradient(180deg,rgba(17,30,40,.97),rgba(10,19,26,.97))!important;
+  box-shadow:var(--cm-shadow)!important;
+}
+.garage-card:first-child{grid-column:1 / -1}
+.order-card{grid-column:1 / -1}
+.warehouse-card{grid-column:1!important}
+.garage-card:nth-of-type(4){grid-column:2!important;grid-row:auto}
+.garage-card:nth-of-type(5){grid-column:1!important}
+.future-card{grid-column:2!important}
+.section-title{margin-bottom:12px!important}.section-title h2{font-size:clamp(22px,2.8vw,30px)!important;line-height:1.12!important}
+.garage-level,.order-status{padding:8px 12px!important;border-radius:12px!important;background:#1a2a36!important;border:1px solid #324858!important;font-size:11px!important;white-space:nowrap!important}
+.garage-description{font-size:14px!important;line-height:1.6!important;color:#94a8b7!important}
+
+/* Main garage viewport */
+.garage-image.garage-visual-container,.garage-visual-container{
+  height:440px!important;
+  min-height:440px!important;
+  margin:0 0 14px!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  border:1px solid #304b5b!important;
+  background:
+    radial-gradient(ellipse at 50% 72%,rgba(52,94,119,.20),transparent 38%),
+    linear-gradient(180deg,#121f29,#071016 78%,#050a0e)!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.04),0 20px 50px rgba(0,0,0,.32)!important;
+}
+.garage-scene{height:100%!important;width:100%!important}
+.garage-ceiling-light{top:18px!important;width:230px!important;height:10px!important;box-shadow:0 0 32px 10px rgba(191,229,250,.25)!important}
+.garage-sign{top:48px!important;font-size:14px!important;padding:9px 15px!important;border-radius:10px!important}
+.garage-shelf{top:92px!important;left:20px!important;font-size:21px!important;padding:9px 12px!important;border-radius:11px!important}
+.garage-workbench{right:20px!important;top:92px!important;font-size:21px!important;padding:9px 12px!important;border-radius:11px!important}
+.garage-car{width:360px!important;height:160px!important;bottom:92px!important;transform:translateX(-50%) scale(1.08)!important;z-index:2!important}
+.garage-car:hover{transform:translateX(-50%) scale(1.12)!important}
+.garage-photo-frame{width:330px!important;height:230px!important;background:linear-gradient(145deg,#17242e,#0a1117)!important;border-color:#355162!important;border-radius:17px!important;box-shadow:0 20px 50px rgba(0,0,0,.38)!important}
+.garage-photo-frame img{object-fit:contain!important;padding:18px!important;filter:drop-shadow(0 18px 14px rgba(0,0,0,.5))!important}
+.garage-photo-fallback{font-size:66px!important}.garage-photo-fallback span{font-size:14px!important}
+.car-nameplate{bottom:-37px!important;font-size:13px!important;padding:6px 11px!important;border-radius:9px!important;background:#101921!important;border:1px solid #2f4554!important}
+.garage-hint{bottom:16px!important;font-size:12px!important;background:rgba(7,13,18,.72)!important;border:1px solid #2e4655!important;padding:7px 11px!important;border-radius:10px!important}
+
+.garage-navigation{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important;margin:0!important}
+.garage-nav-card{min-height:78px!important;display:flex!important;align-items:center!important;gap:10px!important;width:100%!important;padding:11px 13px!important;background:linear-gradient(180deg,#12202a,#0d171e)!important;border:1px solid #294252!important;border-radius:14px!important;color:#eef4f8!important;text-align:left!important;cursor:pointer!important}
+.garage-nav-card:hover{border-color:#468ac3!important;background:#142430!important}.garage-nav-card.accent{border-color:#337be0!important;background:linear-gradient(180deg,#15375d,#112b48)!important}.garage-nav-icon{font-size:24px!important}.garage-nav-card b{display:block!important;font-size:13px!important}.garage-nav-card small{display:block!important;margin-top:4px!important;color:#8196a5!important;font-size:10px!important}
+
+/* Order */
+.order-card .car-info{padding:15px!important;border:1px solid #2b4251!important;background:#0c151c!important;border-radius:15px!important}.car-icon{width:76px!important;height:76px!important;border-radius:14px!important;font-size:36px!important}.car-info h3{font-size:23px!important}.car-info p{font-size:13px!important}.customer-message{padding:14px!important;border-left:3px solid #3d8ae6!important;background:#15232f!important}.customer-message p{font-size:14px!important}
+.main-button,.action-button{border-radius:13px!important;padding:14px 16px!important;font-size:15px!important;background:linear-gradient(180deg,#3b8df7,#276fd4)!important;box-shadow:0 8px 24px rgba(26,112,218,.18)!important}.secondary-button,.modal-back-button{background:#1a2a36!important;border:1px solid #324b5b!important}
+
+/* Compact cards */
+.knowledge-preview{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:10px 0 4px!important}.knowledge-preview span{padding:8px 10px!important;border-radius:10px!important;background:#12212b!important;border:1px solid #28404f!important;font-size:12px!important;color:#b6c7d3!important}
+.goal-row-fixed{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;padding:12px 0!important;border-bottom:1px solid #233845!important}.goal-row-fixed:last-child{border-bottom:0!important}.goal-copy-fixed{min-width:0!important;flex:1!important}.goal-copy-fixed b{font-size:14px!important}.goal-copy-fixed small{display:block!important;margin-top:3px!important;color:#8296a5!important;font-size:11px!important}.goal-row-fixed > span,.goal-row-fixed > strong{white-space:nowrap!important;color:#ecf2f7!important;font-size:14px!important}
+.future-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important}.future-grid>div{padding:11px!important;border:1px solid #28404e!important;border-radius:11px!important;background:#0e1a22!important;font-size:12px!important;color:#b8c7d2!important}
+
+/* Modal: never hide under bottom nav */
+.modal{z-index:500!important;align-items:center!important;padding:20px!important;background:rgba(1,5,8,.76)!important;backdrop-filter:blur(7px)!important}
+.modal-window{width:min(980px,100%)!important;max-width:none!important;max-height:calc(100dvh - 40px)!important;padding:24px!important;border:1px solid #365164!important;border-radius:22px!important;background:linear-gradient(180deg,#121e28,#091219)!important;box-shadow:0 30px 90px rgba(0,0,0,.55)!important;overflow-y:auto!important;scrollbar-width:thin!important}
+.modal-window h2{font-size:clamp(24px,3vw,34px)!important}.modal-window p{font-size:14px!important;line-height:1.6!important}.close-button{top:12px!important;right:14px!important;width:42px!important;height:42px!important;background:#273746!important}
+.diagnosis-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.diagnosis-button,.inspection-button{min-height:84px!important;border-radius:13px!important;background:linear-gradient(180deg,#2f83ec,#2367c5)!important;border:1px solid #438de9!important;color:#fff!important;padding:13px!important}.diagnosis-button small{display:block!important;margin-top:5px!important;color:#dbeaff!important}
+
+/* Bottom nav */
+.bottom-navigation{position:fixed!important;left:50%!important;bottom:0!important;transform:translateX(-50%)!important;z-index:450!important;width:min(760px,100%)!important;min-height:74px!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:4px!important;padding:8px 10px calc(8px + env(safe-area-inset-bottom))!important;background:rgba(8,15,21,.97)!important;border-top:1px solid #27404f!important;box-shadow:0 -14px 35px rgba(0,0,0,.35)!important;backdrop-filter:blur(14px)!important}
+.bottom-navigation button{min-width:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;border:1px solid transparent!important;border-radius:13px!important;background:transparent!important;color:#8296a5!important;cursor:pointer!important;padding:7px 4px!important}.bottom-navigation button span{font-size:24px!important;line-height:1!important}.bottom-navigation button b{font-size:11px!important}.bottom-navigation button.active{color:#fff!important;background:#172736!important;border-color:#31516a!important;box-shadow:inset 0 1px rgba(255,255,255,.04)!important}
+
+/* Work animation */
+.work-animation{min-height:360px!important}.work-animation-icon{font-size:74px!important}.work-animation h2{font-size:30px!important}.work-animation p{font-size:15px!important}.work-progress{width:min(580px,94%)!important;height:11px!important}.work-steps{width:min(620px,96%)!important}.work-step{padding:10px 14px!important;font-size:14px!important}
+
+/* Auction desktop / mobile */
+.auction-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.auction-card-modern{border-radius:14px!important}.auction-photo-wrap{height:180px!important}.auction-car-photo{object-fit:contain!important;padding:12px!important}.auction-card-body{padding:12px!important}.auction-card-body h3{font-size:17px!important}.auction-diagnostic-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+
+/* Desktop: more game, less empty background */
+@media(min-width:900px){
+  .topbar{padding-left:34px!important;padding-right:34px!important}
+  .garage-card:first-child{padding-bottom:18px!important}
+  .cm-order-strip{display:flex!important}
+}
+
+/* Tablet */
+@media(max-width:899px){
+  .app{width:100%!important}
+  main{display:block!important;max-width:720px!important}
+  main>.garage-card,main>.order-card{margin-bottom:14px!important}
+  .garage-image.garage-visual-container,.garage-visual-container{height:350px!important;min-height:350px!important}
+  .garage-car{width:300px!important;transform:translateX(-50%) scale(.98)!important}
+  .garage-photo-frame{width:280px!important;height:190px!important}
+  .garage-navigation{grid-template-columns:1fr 1fr!important}
+}
+
+/* Phone */
+@media(max-width:600px){
+  .topbar{position:relative!important;padding:16px 14px!important;gap:12px!important}
+  .game-title{font-size:26px!important}.game-subtitle{font-size:12px!important}
+  .player-level{min-width:72px!important;padding:9px 9px!important}.player-level b{font-size:25px!important}
+  .stats{padding:10px 12px!important;gap:8px!important;margin-top:0!important}
+  .stat{min-height:66px!important;padding:10px 8px!important;gap:6px!important}.stat > span{font-size:19px!important}.stat b{font-size:14px!important}.stat small{font-size:9px!important}
+  main{padding:10px 12px 108px!important}
+  .garage-card,.order-card{padding:14px!important;border-radius:16px!important}
+  .section-title h2{font-size:22px!important}.garage-description{font-size:13px!important}
+  .garage-image.garage-visual-container,.garage-visual-container{height:300px!important;min-height:300px!important;border-radius:15px!important}
+  .garage-ceiling-light{width:150px!important}.garage-sign{top:39px!important;font-size:11px!important}.garage-shelf{top:72px!important;left:10px!important;font-size:16px!important}.garage-workbench{top:72px!important;right:10px!important;font-size:16px!important}
+  .garage-car{width:270px!important;height:135px!important;bottom:57px!important;transform:translateX(-50%) scale(.9)!important}.garage-car:hover{transform:translateX(-50%) scale(.92)!important}
+  .garage-photo-frame{width:240px!important;height:165px!important}.garage-photo-frame img{padding:10px!important}.garage-hint{bottom:9px!important;font-size:9px!important;max-width:90%;text-align:center}
+  .garage-navigation{gap:8px!important}.garage-nav-card{min-height:68px!important;padding:10px!important}.garage-nav-icon{font-size:21px!important}.garage-nav-card b{font-size:11px!important}.garage-nav-card small{font-size:9px!important}
+  .order-card .car-info{padding:11px!important}.car-icon{width:60px!important;height:60px!important;font-size:29px!important}.car-info h3{font-size:18px!important}.car-info p{font-size:11px!important}
+  .main-button,.action-button{font-size:14px!important;padding:13px 12px!important}
+  .diagnosis-list{grid-template-columns:1fr!important}.inspection-grid{grid-template-columns:1fr 1fr!important}
+  .modal{padding:8px!important;align-items:flex-end!important}.modal-window{max-height:calc(100dvh - 20px)!important;padding:18px 14px calc(20px + 74px)!important;border-radius:19px 19px 10px 10px!important}
+  .modal-window h2{font-size:24px!important}.modal-window p{font-size:13px!important}
+  .bottom-navigation{min-height:70px!important;padding:7px 6px calc(7px + env(safe-area-inset-bottom))!important}.bottom-navigation button span{font-size:22px!important}.bottom-navigation button b{font-size:10px!important}
+  .auction-grid{grid-template-columns:1fr 1fr!important}.auction-photo-wrap{height:125px!important}.auction-card-body h3{font-size:14px!important}.auction-diagnostic-grid{grid-template-columns:1fr 1fr!important}
+  .work-animation{min-height:300px!important}.work-animation-icon{font-size:58px!important}.work-animation h2{font-size:24px!important}.work-animation p{font-size:13px!important}.work-step{font-size:12px!important;padding:8px 10px!important}
+}
+
+@media(max-width:390px){
+  .game-title{font-size:24px!important}.stats{gap:6px!important}.stat{padding:9px 6px!important}.stat > span{font-size:17px!important}.stat b{font-size:12px!important}.stat small{font-size:8px!important}
+  .garage-navigation{grid-template-columns:1fr!important}
+  .inspection-grid{grid-template-columns:1fr!important}
+  .auction-grid{grid-template-columns:1fr!important}
+}
